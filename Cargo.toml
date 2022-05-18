@@ -1,0 +1,21 @@
+[package]
+name = "custom-perf"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "client"
+path = "src/client.rs"
+
+[dependencies]
+s2n-quic = { version = "1.1.1", features = ["provider-tls-s2n"]}
+s2n-quic-core = { version = "0.2.1", features = ["testing"]}
+clap = { version = "3.0.5", features = ["derive"] }
+tokio = { version="1.14.0", features=["full"] }
+futures-util = {version="0.3.18"}
+env_logger = { version = "0.9.0" }
+log = { version = "0.4.14" }
+bytesize = { version = "1.1.0" }
+bytes = { version = "1.1.0" }
